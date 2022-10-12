@@ -30,15 +30,16 @@ class LoginApplicationTests {
                 {"shortpw", "3"},
                 {"toolonglonglonglonglonglonglonglong", "4"},
                 {"noSpecialCharacter123", "9"},
-                {"NOlOWERCASE", "6"},
+                {"NOLOWERCASE", "6"},
                 {"nouppercase", "7"},
                 {"PWlacksnumber", "8"},
-                {"1234567890", "9"},
-                {"P@ssw0rd", "3"},
+                {"1234567890", "6"},
+                {"P@ssw0rd", "0"},
                 {"P@ssw0rdligit1", "0"},
-                {"noSpecialCharacter", "9"},
+                {"noSpecialCharacterAndNumber", "8"},
                 {"validPassword123.~", "0"},
         };
+
         test(test_data);
     }
 
