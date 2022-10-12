@@ -1,5 +1,9 @@
 # Software-Testing
 
+## Files to look at
+File contains the business logic: "./src/main/java/com/springboot/controllers/SignUpController.java"
+File contains all the test cases: "./src/test/java/com/springboot/login/LoginApplicationTests.java"
+
 ## Screenshots
 
 Scenario if any test case failed.

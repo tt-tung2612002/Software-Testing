@@ -30,16 +30,36 @@ class LoginApplicationTests {
     @Test
     void testSignUpForm() {
         String[][] test_data = {
+                // testcase where the password is too short
                 { "shortpw", "3" },
+                { "lackone", "3" },
+
+                // testcase where the password is too long
                 { "toolonglonglonglonglonglonglonglong", "4" },
-                { "noSpecialCharacter123", "9" },
+                { "toolonglonglonglonglonglonglonglonglong", "4" },
+
+                // testcase where the password doesn't contain any lowercase character
                 { "NOLOWERCASE", "6" },
+                { "N0LOWERCASEEEE~>", "6" },
+
+                // testcase where the password doesn't contain any special character
+                { "noSpecialCharacter123", "9" },
+                { "noSpecialCharacter1234567890", "9" },
+
+                // testcase where the password doesn't contain any uppercase character
                 { "nouppercase", "7" },
+                { "n0upp3rcase", "7" },
+
+                // testcase where the password doesn't contain any digit
                 { "PWlacksnumber", "8" },
+                { "PWlacksnumber~>", "8" },
+
+                // testcase where the password only contains digits.
                 { "1234567890", "6" },
+
+                // testcase where the password meets all the requirements
                 { "P@ssw0rd", "0" },
                 { "P@ssw0rdligit1", "0" },
-                { "noSpecialCharacterAndNumber", "8" },
                 { "validPassword123.~", "0" },
         };
 
