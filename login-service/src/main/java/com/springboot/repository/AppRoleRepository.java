@@ -1,9 +1,9 @@
 package com.springboot.repository;
 
-import com.springboot.entity.AppRole;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.springboot.entity.AppRole;
 
 @Repository
 public interface AppRoleRepository extends JpaRepository<AppRole, Long> {

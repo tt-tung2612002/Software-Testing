@@ -2,33 +2,28 @@ package com.springboot.configuration;
 
 import java.util.List;
 
-import com.springboot.services.UserService;
-import com.springboot.utils.ConfigUtils;
-import com.springboot.utils.JwtTokenUtils;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
 import com.springboot.filter.JwtAuthenticationFilter;
 import com.springboot.filter.UserAuthorizationFilter;
 import com.springboot.services.UserService;
+import com.springboot.utils.ConfigUtils;
+import com.springboot.utils.JwtTokenUtils;
 
 import lombok.RequiredArgsConstructor;
 
-@Configuration
-@EnableWebSecurity
+// @Configuration
+// @EnableWebSecurity
 @RequiredArgsConstructor
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+// @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserService userService;
     private final UserDetailsService userDetailsService;

@@ -29,8 +29,7 @@ To run tests, run the following command
 
 ```zsh
   cd login-service
-  mvn clean install
-  mvn test
+  ./mvnw test
 ```
 
 Test cases are well-documented in the source code.
