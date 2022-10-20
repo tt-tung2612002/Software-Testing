@@ -94,25 +94,25 @@ public class SignUpController {
 
     // validate password and return corresponding enum
     public int validatePasswordStrength(String password) {
-        if (password.length() < 8) {
-            return SignUpErrorCode.PASSWORD_TOO_SHORT.code;
+        if (password.length() < 8) { // 1
+            return SignUpErrorCode.PASSWORD_TOO_SHORT.code; //2
+        } 
+        if (password.length() > 32) { // 3
+            return SignUpErrorCode.PASSWORD_TOO_LONG.code; // 4
+        } 
+        if (getNumberOfLowercaseChars(password) < 1) { // 5
+            return SignUpErrorCode.PASSWORD_LACKS_LOWERCASE_CHARACTERS.code; // 6
         }
-        if (password.length() > 32) {
-            return SignUpErrorCode.PASSWORD_TOO_LONG.code;
+        if (getNumberOfUppercaseChars(password) < 1) { // 7
+            return SignUpErrorCode.PASSWORD_LACKS_UPPERCASE_CHARACTERS.code; // 8
         }
-        if (getNumberOfLowercaseChars(password) < 1) {
-            return SignUpErrorCode.PASSWORD_LACKS_LOWERCASE_CHARACTERS.code;
+        if (getNumberOfDigits(password) < 1) { // 9
+            return SignUpErrorCode.PASSWORD_LACKS_DIGITS.code; // 10
+        } 
+        if (getNumberOfSpecialChars(password) < 1) { // 11
+            return SignUpErrorCode.PASSWORD_LACKS_SPECIAL_CHARACTERS.code; // 12
         }
-        if (getNumberOfUppercaseChars(password) < 1) {
-            return SignUpErrorCode.PASSWORD_LACKS_UPPERCASE_CHARACTERS.code;
-        }
-        if (getNumberOfDigits(password) < 1) {
-            return SignUpErrorCode.PASSWORD_LACKS_DIGITS.code;
-        }
-        if (getNumberOfSpecialChars(password) < 1) {
-            return SignUpErrorCode.PASSWORD_LACKS_SPECIAL_CHARACTERS.code;
-        }
-        return 0;
+        return 0; // 13
     }
 
 
